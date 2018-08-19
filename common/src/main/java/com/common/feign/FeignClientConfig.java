@@ -1,6 +1,7 @@
 package com.common.feign;
 
 import feign.RequestInterceptor;
+import feign.codec.ErrorDecoder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.security.oauth2.client.feign.OAuth2FeignRequestInterceptor;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +10,9 @@ import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
 import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
 
+/**
+ * @author xielongwang
+ */
 @Configuration
 public class FeignClientConfig {
 
@@ -21,5 +25,10 @@ public class FeignClientConfig {
     @Bean
     public RequestInterceptor requestInterceptor(OAuth2ClientContext context, OAuth2ProtectedResourceDetails details) {
         return new OAuth2FeignRequestInterceptor(context, details);
+    }
+
+    @Bean
+    public ErrorDecoder errorDecoder() {
+        return new Oauth2FeignErrorInterceptor();
     }
 }

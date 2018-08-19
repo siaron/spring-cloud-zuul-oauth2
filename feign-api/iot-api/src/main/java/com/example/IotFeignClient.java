@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.feign.config.FeignClientConfig;
+import com.common.feign.FeignClientConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
