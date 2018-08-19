@@ -1,0 +1,44 @@
+server:
+  port: 9001
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+spring:
+  application:
+    name: iot
+  cloud:
+    consul:
+      discovery:
+        hostname: localhost
+        instance-id: ${spring.application.name}:${spring.cloud.consul.discovery.hostname}:${server.port}
+      host: localhost
+      port: 8500
+
+security:
+  oauth2:
+    client:
+      clientId: cloudIot
+      clientSecret: cloudIotSecret
+      accessTokenUri: http://localhost:9003/oauth/token
+      userAuthorizationUri: http://localhost:9003/oauth/authorize
+    resource:
+      userInfoUri: http://localhost:9003/user
+      prefer-token-info: false
+      jwt:
+        key-uri: http://localhost:9003/oauth/token_key
+      token-info-uri: http://localhost:9003/oauth/check_token
+
+logging:
+  level:
+    org.springframework: debug
+

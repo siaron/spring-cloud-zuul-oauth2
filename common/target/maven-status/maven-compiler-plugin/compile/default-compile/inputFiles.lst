@@ -1,0 +1,7 @@
+/Users/xielongwang/Documents/GitHub/spring-cloud-zuul-oauth2/common/src/main/java/com/common/dto/WrapMapper.java
+/Users/xielongwang/Documents/GitHub/spring-cloud-zuul-oauth2/common/src/main/java/com/common/constant/GlobalConstant.java
+/Users/xielongwang/Documents/GitHub/spring-cloud-zuul-oauth2/common/src/main/java/com/common/constant/SecurityConstants.java
+/Users/xielongwang/Documents/GitHub/spring-cloud-zuul-oauth2/common/src/main/java/com/common/dto/Wrapper.java
+/Users/xielongwang/Documents/GitHub/spring-cloud-zuul-oauth2/common/src/main/java/com/common/feign/FeignClientConfig.java
+/Users/xielongwang/Documents/GitHub/spring-cloud-zuul-oauth2/common/src/main/java/com/common/AuthExceptionEntryPoint.java
+/Users/xielongwang/Documents/GitHub/spring-cloud-zuul-oauth2/common/src/main/java/com/common/utils/RequestUtil.java

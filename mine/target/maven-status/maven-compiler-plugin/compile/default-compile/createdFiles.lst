@@ -1,0 +1,4 @@
+com/example/config/ResourceServerConfig.class
+META-INF/spring-autoconfigure-metadata.properties
+com/example/controller/MineController.class
+com/example/MineApp.class

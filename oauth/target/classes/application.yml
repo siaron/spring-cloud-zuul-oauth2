@@ -1,0 +1,80 @@
+server:
+  port: 9003
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  health:
+    db:
+      enabled: false
+
+spring:
+  jmx:
+    enabled: false
+  application:
+    name: uaa
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+  cloud:
+    refresh:
+      enabled: none
+    consul:
+      discovery:
+        hostname: localhost
+        instance-id: ${spring.application.name}:${spring.cloud.consul.discovery.hostname}:${server.port}
+      host: localhost
+      port: 8500
+  redis:
+    password: redis
+  datasource:
+    username: zuul_sso
+    password: zuul_sso
+    url: jdbc:postgresql://127.0.0.1:5432/zuul_sso
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+
+logging:
+  level:
+    org.springframework: info
+
+example:
+  oauth2:
+    clients[0]:
+      clientId: cloudAuth
+      clientSecret: cloudAuthSecret
+      accessTokenValidateSeconds: 7200
+      scope: "*"
+    clients[1]:
+      clientId: cloudRental
+      clientSecret: cloudRentalSecret
+      accessTokenValidateSeconds: 7200
+      scope: "*"
+    clients[2]:
+      clientId: cloudIot
+      clientSecret: cloudIotSecret
+      accessTokenValidateSeconds: 7200
+      scope: "*"
+    clients[3]:
+      clientId: cloudMine
+      clientSecret: cloudMineSecret
+      accessTokenValidateSeconds: 7200
+      scope: "*"
+    clients[4]:
+      clientId: cloudZuul
+      clientSecret: cloudZuulSecret
+      accessTokenValidateSeconds: 7200
+      scope: "*"
