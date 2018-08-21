@@ -2,7 +2,7 @@ package com.example.security.handler;
 
 import com.common.utils.RequestUtil;
 import com.common.dto.WrapMapper;
-import com.example.dto.SecurityUser;
+import com.common.dto.SecurityUser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.collections.MapUtils;
 import org.slf4j.Logger;
