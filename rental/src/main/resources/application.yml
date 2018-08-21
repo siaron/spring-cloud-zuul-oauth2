@@ -23,21 +23,21 @@ spring:
         instance-id: ${spring.application.name}:${spring.cloud.consul.discovery.hostname}:${server.port}
       host: localhost
       port: 8500
-
+  redis:
+    password: redis
 
 security:
   oauth2:
     client:
-      clientId: cloudRental
-      clientSecret: cloudRentalSecret
-      accessTokenUri: http://localhost:9003/oauth/token
-      userAuthorizationUri: http://localhost:9003/oauth/authorize
+      client-id: cloudRental
+      client-secret: cloudRentalSecret
+      access-token-uri: http://localhost:9003/oauth/token
     resource:
-      userInfoUri: http://localhost:9003/user
-      prefer-token-info: false
       jwt:
-        key-uri: http://localhost:9003/oauth/token_key
-      token-info-uri: http://localhost:9003/oauth/check_token
+        key-value:
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAimuttOs6TlDDXkTqmjVyEBufUOXH4zajYthUH8aoHCMMHgIKMZ7b0tH/F7PDKOaVtViqbirEU3rMQ80RFMTuCloV24rGjqMZu+QJH8f6iWCHxW269oNaxx7oC5qIo+4mLTdvDRZPam8BHsBRa8W9wakxTnWbZcDkABdgx9bZNUtfBk+Jo1YvIUFpUPnRtKMTAgzdAfb105+3OU3lfA76eWYjGNrRGBHF80/pKo3ob2FE5lJqUt4Z8gVT6g7aT0nFdyr5i/L/Z0sX/yOrrBNBQ6xWF/9HEu8eG5s8iHid0SQr1TEIugDUkA+wv6DT2Kxk/EjvNhhaUHsij4ZZXYaM4wIDAQAB
+          -----END PUBLIC KEY-----
 
 logging:
   level:
