@@ -19,7 +19,7 @@ import java.net.UnknownHostException;
 /**
  * The class Request util.
  *
- * @author paascloud.net@gmail.com
+ * @author xielong.wang
  */
 public class RequestUtil {
 

@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * @author Shenluw 创建日期：2018/3/21 16:30
+ * @author xielong.wang
  * <p>
  * https://segmentfault.com/a/1190000012260914
  * <p>

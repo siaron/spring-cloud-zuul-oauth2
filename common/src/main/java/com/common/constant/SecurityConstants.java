@@ -3,7 +3,7 @@ package com.common.constant;
 /**
  * The interface Security constants.
  *
- * @author paascloud.net@gmail.com
+ * @author xielong.wang
  */
 public interface SecurityConstants {
 

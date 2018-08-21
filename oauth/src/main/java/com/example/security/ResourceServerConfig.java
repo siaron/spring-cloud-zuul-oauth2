@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.provider.expression.OAuth2WebSecurity
 import org.springframework.security.web.access.AccessDeniedHandler;
 
 /**
- * @author Shenluw 创建日期：2018/6/27 16:40
+ * @author xielong.wang
  */
 @Configuration
 @EnableResourceServer

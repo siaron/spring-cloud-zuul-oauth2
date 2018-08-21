@@ -28,7 +28,7 @@ import java.util.Map;
 /**
  * The class Pc access denied handler.
  *
- * @author paascloud.net @gmail.com
+ * @author xielong.wang
  */
 @Configuration
 public class PcAccessDeniedHandler implements AccessDeniedHandler {
