@@ -1,5 +1,7 @@
 package com.example.service;
 
+import com.example.ErrorCode;
+import com.example.ServiceException;
 import com.example.entity.ActionEntity;
 import com.common.dto.SecurityUser;
 import com.example.entity.UserEntity;
@@ -14,6 +16,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -36,8 +39,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Collection<GrantedAuthority> grantedAuthorities = Lists.newArrayList();
 
         UserEntity user = userRepository.findByUserName(username);
+
         if (user == null) {
-            throw new BadCredentialsException("用户名不存在或者密码错误");
+            throw new UsernameNotFoundException("用户不存在");
         }
 
         List<ActionEntity> actionEntities = actionRepository.findByUId(user.getId());
